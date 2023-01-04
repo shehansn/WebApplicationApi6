@@ -14,7 +14,7 @@ namespace WebApplicationApi6.Controllers
         [HttpGet]
         public IActionResult Users()
         {
-            var users= new string[] { "user1", "user2" };
+            var users= new string[] { "user1", "user2","user3" };
             return Ok(users);
         }
 
