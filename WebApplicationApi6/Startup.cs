@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UserApi.Services;
+using WebApplicationApi6.Services;
 
 namespace WebApplicationApi6
 {
@@ -32,6 +34,14 @@ namespace WebApplicationApi6
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplicationApi6", Version = "v1" });
             });
+
+            services.AddScoped<IUserRepository, UserService>();
+            /*
+            services.AddSingleton();//only one instanceper application
+            services.AddScoped();//create interface one time requests//new object created per request
+            services.AddTransient();//create interface all requests//always a new object is presented
+        
+            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

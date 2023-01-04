@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UserApi.Services;
 using WebApplicationApi6.Models;
 
 namespace WebApplicationApi6.Services
 {
-    public class UserService
+    public class UserService : IUserRepository
     {
         public List<User> getAllUsers()
         {

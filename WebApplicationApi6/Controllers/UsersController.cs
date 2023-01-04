@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UserApi.Services;
 using WebApplicationApi6.Models;
 using WebApplicationApi6.Services;
 
@@ -13,12 +14,20 @@ namespace WebApplicationApi6.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        private readonly IUserRepository _userService;
+
+        public UsersController(IUserRepository repository)
+        {
+            _userService = repository;
+        }
+        /*
         private UserService _userService;
 
         public UsersController()
         {
             _userService = new UserService();
         }
+        */
 
         [HttpGet("{id?}")]
         public IActionResult Users(int? id)
